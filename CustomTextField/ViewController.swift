@@ -30,7 +30,7 @@ class ViewController: UIViewController {
     }
 
     private func setup() {
-        view.translatesAutoresizingMaskIntoConstraints = false
+//        view.translatesAutoresizingMaskIntoConstraints = false
 
         vStack.addArrangedSubview(nameTextField)
         vStack.addArrangedSubview(emailTextField)
@@ -42,21 +42,29 @@ class ViewController: UIViewController {
             vStack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40),
 
             vStack.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
-            vStack.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 16),
+            vStack.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16),
         ])
     }
 }
 
-struct TestViewRepresentable: UIViewControllerRepresentable {
-    func makeUIViewController(context: Context) -> some UIViewController {
-        return ViewController()
-    }
-
-    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {}
-}
-
 struct TextView_Preview: PreviewProvider {
     static var previews: some View {
-        return TestViewRepresentable()
+        return ViewController().showPreview()
+    }
+}
+
+extension UIViewController {
+    private struct Preview: UIViewControllerRepresentable {
+        let viewController: UIViewController
+
+        func makeUIViewController(context: Context) -> some UIViewController {
+            return viewController
+        }
+
+        func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {}
+    }
+
+    func showPreview() -> some View {
+        return Preview(viewController: self)
     }
 }

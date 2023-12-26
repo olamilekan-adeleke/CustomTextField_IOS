@@ -8,6 +8,14 @@
 import SwiftUI
 import UIKit
 
+func stackView(axis: NSLayoutConstraint.Axis = .vertical, spacing: CGFloat = 10) -> UIStackView {
+    let stack = UIStackView(frame: .zero)
+    stack.axis = axis
+    stack.spacing = spacing
+    stack.translatesAutoresizingMaskIntoConstraints = false
+    return stack
+}
+
 final class BaseTextField: UIView {
     // MARK: -  Component
 
@@ -36,13 +44,7 @@ final class BaseTextField: UIView {
         return label
     }()
 
-    private lazy var vStack: UIStackView = {
-        let stack = UIStackView(frame: .zero)
-        stack.axis = .vertical
-        stack.spacing = 8
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        return stack
-    }()
+    private lazy var vStack = stackView()
 
     init() {
         super.init(frame: CGRect.zero)
@@ -66,7 +68,7 @@ final class BaseTextField: UIView {
         errorLabel.textAlignment = .left
         errorLabel.textColor = .systemRed
 //        errorLabel.isHidden = true
-        errorLabel.text = "Thsuosuosous ssysy gysysnbsusususususus siusuisuuisuis susuiuisuisui suisuusuus suiiusiu"
+//        errorLabel.text = "Thsuosuosous ssysy gysysnbsusususususus siusuisuuisuis susuiuisuisui suisuusuus suiiusiu"
         errorLabel.font = .preferredFont(forTextStyle: .footnote)
     }
 
@@ -94,9 +96,9 @@ final class BaseTextField: UIView {
         ])
     }
 
-    override var intrinsicContentSize: CGSize {
-        return CGSize(width: 390, height: 50)
-    }
+//    override var intrinsicContentSize: CGSize {
+//        return CGSize(width: 390, height: 50)
+//    }
 }
 
 // MARK: - Preview
