@@ -12,6 +12,8 @@
 		39FCF8262B3AE22200097FCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FCF8252B3AE22200097FCE /* ViewController.swift */; };
 		39FCF82B2B3AE22400097FCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39FCF82A2B3AE22400097FCE /* Assets.xcassets */; };
 		39FCF82E2B3AE22400097FCE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39FCF82C2B3AE22400097FCE /* LaunchScreen.storyboard */; };
+		39FCF8392B3AE42E00097FCE /* BaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FCF8382B3AE42E00097FCE /* BaseTextField.swift */; };
+		39FCF83B2B3AE45000097FCE /* BaseTextField+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FCF83A2B3AE45000097FCE /* BaseTextField+ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		39FCF82A2B3AE22400097FCE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		39FCF82D2B3AE22400097FCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		39FCF82F2B3AE22400097FCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		39FCF8382B3AE42E00097FCE /* BaseTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextField.swift; sourceTree = "<group>"; };
+		39FCF83A2B3AE45000097FCE /* BaseTextField+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseTextField+ViewModel.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 		39FCF8202B3AE22200097FCE /* CustomTextField */ = {
 			isa = PBXGroup;
 			children = (
+				39FCF8352B3AE3B100097FCE /* TextField */,
 				39FCF8212B3AE22200097FCE /* AppDelegate.swift */,
 				39FCF8232B3AE22200097FCE /* SceneDelegate.swift */,
 				39FCF8252B3AE22200097FCE /* ViewController.swift */,
@@ -62,6 +67,23 @@
 				39FCF82F2B3AE22400097FCE /* Info.plist */,
 			);
 			path = CustomTextField;
+			sourceTree = "<group>";
+		};
+		39FCF8352B3AE3B100097FCE /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				39FCF8362B3AE3CA00097FCE /* Validators */,
+				39FCF8382B3AE42E00097FCE /* BaseTextField.swift */,
+				39FCF83A2B3AE45000097FCE /* BaseTextField+ViewModel.swift */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
+		39FCF8362B3AE3CA00097FCE /* Validators */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Validators;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +157,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				39FCF8262B3AE22200097FCE /* ViewController.swift in Sources */,
+				39FCF83B2B3AE45000097FCE /* BaseTextField+ViewModel.swift in Sources */,
 				39FCF8222B3AE22200097FCE /* AppDelegate.swift in Sources */,
+				39FCF8392B3AE42E00097FCE /* BaseTextField.swift in Sources */,
 				39FCF8242B3AE22200097FCE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
