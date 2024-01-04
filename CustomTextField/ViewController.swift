@@ -9,9 +9,9 @@ import SwiftUI
 import UIKit
 
 class ViewController: UIViewController {
-    private let nameTextField = BaseTextField()
-    private let emailTextField = BaseTextField()
-    private let passwordTextField = BaseTextField()
+    private let nameTextField = BaseTextField(viewModel: .init(type: .name))
+    private let emailTextField = BaseTextField(viewModel: .init(type: .email))
+    private let passwordTextField = BaseTextField(viewModel: .init(type: .password))
 
     private let vStack: UIStackView = {
         let stack = UIStackView(frame: .zero)

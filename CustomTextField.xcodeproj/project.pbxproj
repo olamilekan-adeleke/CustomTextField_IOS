@@ -10,6 +10,8 @@
 		39067D9C2B474345003343A2 /* FormValidationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39067D9B2B474345003343A2 /* FormValidationState.swift */; };
 		39067D9E2B474551003343A2 /* BaseValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39067D9D2B474551003343A2 /* BaseValidator.swift */; };
 		39067DA12B474F16003343A2 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39067DA02B474F16003343A2 /* String+Extension.swift */; };
+		39067DA42B4751F2003343A2 /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39067DA32B4751F2003343A2 /* EmailValidator.swift */; };
+		39067DA62B475C47003343A2 /* BaseTextField+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39067DA52B475C47003343A2 /* BaseTextField+Enum.swift */; };
 		39FCF8222B3AE22200097FCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FCF8212B3AE22200097FCE /* AppDelegate.swift */; };
 		39FCF8242B3AE22200097FCE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FCF8232B3AE22200097FCE /* SceneDelegate.swift */; };
 		39FCF8262B3AE22200097FCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FCF8252B3AE22200097FCE /* ViewController.swift */; };
@@ -23,6 +25,8 @@
 		39067D9B2B474345003343A2 /* FormValidationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormValidationState.swift; sourceTree = "<group>"; };
 		39067D9D2B474551003343A2 /* BaseValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseValidator.swift; sourceTree = "<group>"; };
 		39067DA02B474F16003343A2 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		39067DA32B4751F2003343A2 /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
+		39067DA52B475C47003343A2 /* BaseTextField+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseTextField+Enum.swift"; sourceTree = "<group>"; };
 		39FCF81E2B3AE22200097FCE /* CustomTextField.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomTextField.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39FCF8212B3AE22200097FCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39FCF8232B3AE22200097FCE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +55,14 @@
 				39067DA02B474F16003343A2 /* String+Extension.swift */,
 			);
 			path = extenstion;
+			sourceTree = "<group>";
+		};
+		39067DA22B4751D1003343A2 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				39067D9B2B474345003343A2 /* FormValidationState.swift */,
+			);
+			path = State;
 			sourceTree = "<group>";
 		};
 		39FCF8152B3AE22200097FCE = {
@@ -90,6 +102,7 @@
 				39FCF8362B3AE3CA00097FCE /* Validators */,
 				39FCF8382B3AE42E00097FCE /* BaseTextField.swift */,
 				39FCF83A2B3AE45000097FCE /* BaseTextField+ViewModel.swift */,
+				39067DA52B475C47003343A2 /* BaseTextField+Enum.swift */,
 			);
 			path = TextField;
 			sourceTree = "<group>";
@@ -97,8 +110,9 @@
 		39FCF8362B3AE3CA00097FCE /* Validators */ = {
 			isa = PBXGroup;
 			children = (
-				39067D9B2B474345003343A2 /* FormValidationState.swift */,
+				39067DA22B4751D1003343A2 /* State */,
 				39067D9D2B474551003343A2 /* BaseValidator.swift */,
+				39067DA32B4751F2003343A2 /* EmailValidator.swift */,
 			);
 			path = Validators;
 			sourceTree = "<group>";
@@ -175,12 +189,14 @@
 			files = (
 				39067DA12B474F16003343A2 /* String+Extension.swift in Sources */,
 				39067D9C2B474345003343A2 /* FormValidationState.swift in Sources */,
+				39067DA42B4751F2003343A2 /* EmailValidator.swift in Sources */,
 				39067D9E2B474551003343A2 /* BaseValidator.swift in Sources */,
 				39FCF8262B3AE22200097FCE /* ViewController.swift in Sources */,
 				39FCF83B2B3AE45000097FCE /* BaseTextField+ViewModel.swift in Sources */,
 				39FCF8222B3AE22200097FCE /* AppDelegate.swift in Sources */,
 				39FCF8392B3AE42E00097FCE /* BaseTextField.swift in Sources */,
 				39FCF8242B3AE22200097FCE /* SceneDelegate.swift in Sources */,
+				39067DA62B475C47003343A2 /* BaseTextField+Enum.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

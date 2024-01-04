@@ -46,7 +46,14 @@ final class BaseTextField: UIView {
 
     private lazy var vStack = stackView()
 
-    init() {
+    // MARK: - Properties
+
+    private let viewModel: ViewModel
+
+    // MARK: - Lifecycle
+
+    init(viewModel: ViewModel) {
+        self.viewModel = viewModel
         super.init(frame: CGRect.zero)
 
         setUp()
@@ -67,7 +74,7 @@ final class BaseTextField: UIView {
         errorLabel.numberOfLines = 0
         errorLabel.textAlignment = .left
         errorLabel.textColor = .systemRed
-//        errorLabel.isHidden = true
+        errorLabel.isHidden = true
         errorLabel.text = "Thsuosuosous ssysy gysysnbsusususususus"
         errorLabel.font = .preferredFont(forTextStyle: .footnote)
     }
@@ -99,20 +106,4 @@ final class BaseTextField: UIView {
 //    override var intrinsicContentSize: CGSize {
 //        return CGSize(width: 370, height: 50)
 //    }
-}
-
-// MARK: - Preview
-
-struct TextFieldViewRepresentable: UIViewRepresentable {
-    func makeUIView(context: Context) -> some UIView {
-        return BaseTextField()
-    }
-
-    func updateUIView(_ uiView: UIViewType, context: Context) {}
-}
-
-struct View_Preview: PreviewProvider {
-    static var previews: some View {
-        return TextFieldViewRepresentable()
-    }
 }
