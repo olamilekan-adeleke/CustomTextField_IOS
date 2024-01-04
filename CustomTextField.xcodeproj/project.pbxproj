@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39067D9C2B474345003343A2 /* FormValidationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39067D9B2B474345003343A2 /* FormValidationState.swift */; };
+		39067D9E2B474551003343A2 /* BaseValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39067D9D2B474551003343A2 /* BaseValidator.swift */; };
+		39067DA12B474F16003343A2 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39067DA02B474F16003343A2 /* String+Extension.swift */; };
 		39FCF8222B3AE22200097FCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FCF8212B3AE22200097FCE /* AppDelegate.swift */; };
 		39FCF8242B3AE22200097FCE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FCF8232B3AE22200097FCE /* SceneDelegate.swift */; };
 		39FCF8262B3AE22200097FCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FCF8252B3AE22200097FCE /* ViewController.swift */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		39067D9B2B474345003343A2 /* FormValidationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormValidationState.swift; sourceTree = "<group>"; };
+		39067D9D2B474551003343A2 /* BaseValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseValidator.swift; sourceTree = "<group>"; };
+		39067DA02B474F16003343A2 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		39FCF81E2B3AE22200097FCE /* CustomTextField.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomTextField.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39FCF8212B3AE22200097FCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39FCF8232B3AE22200097FCE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +45,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		39067D9F2B474F03003343A2 /* extenstion */ = {
+			isa = PBXGroup;
+			children = (
+				39067DA02B474F16003343A2 /* String+Extension.swift */,
+			);
+			path = extenstion;
+			sourceTree = "<group>";
+		};
 		39FCF8152B3AE22200097FCE = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +72,7 @@
 		39FCF8202B3AE22200097FCE /* CustomTextField */ = {
 			isa = PBXGroup;
 			children = (
+				39067D9F2B474F03003343A2 /* extenstion */,
 				39FCF8352B3AE3B100097FCE /* TextField */,
 				39FCF8212B3AE22200097FCE /* AppDelegate.swift */,
 				39FCF8232B3AE22200097FCE /* SceneDelegate.swift */,
@@ -82,6 +97,8 @@
 		39FCF8362B3AE3CA00097FCE /* Validators */ = {
 			isa = PBXGroup;
 			children = (
+				39067D9B2B474345003343A2 /* FormValidationState.swift */,
+				39067D9D2B474551003343A2 /* BaseValidator.swift */,
 			);
 			path = Validators;
 			sourceTree = "<group>";
@@ -156,6 +173,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39067DA12B474F16003343A2 /* String+Extension.swift in Sources */,
+				39067D9C2B474345003343A2 /* FormValidationState.swift in Sources */,
+				39067D9E2B474551003343A2 /* BaseValidator.swift in Sources */,
 				39FCF8262B3AE22200097FCE /* ViewController.swift in Sources */,
 				39FCF83B2B3AE45000097FCE /* BaseTextField+ViewModel.swift in Sources */,
 				39FCF8222B3AE22200097FCE /* AppDelegate.swift in Sources */,

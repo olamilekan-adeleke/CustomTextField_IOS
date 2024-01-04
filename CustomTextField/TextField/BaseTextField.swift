@@ -68,7 +68,7 @@ final class BaseTextField: UIView {
         errorLabel.textAlignment = .left
         errorLabel.textColor = .systemRed
 //        errorLabel.isHidden = true
-//        errorLabel.text = "Thsuosuosous ssysy gysysnbsusususususus siusuisuuisuis susuiuisuisui suisuusuus suiiusiu"
+        errorLabel.text = "Thsuosuosous ssysy gysysnbsusususususus"
         errorLabel.font = .preferredFont(forTextStyle: .footnote)
     }
 
@@ -96,9 +96,9 @@ final class BaseTextField: UIView {
         ])
     }
 
-    override var intrinsicContentSize: CGSize {
-        return CGSize(width: 370, height: 50)
-    }
+//    override var intrinsicContentSize: CGSize {
+//        return CGSize(width: 370, height: 50)
+//    }
 }
 
 // MARK: - Preview
