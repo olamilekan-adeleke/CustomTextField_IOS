@@ -133,7 +133,7 @@ extension BaseTextField {
     }
 
     private func listenForStateChanges() {
-        $validationState.receive(on: DispatchQueue.main)
+        $validationState.receive(on: RunLoop.main)
             .sink { [weak self] state in
                 self?.validationStateChanged(state: state)
             }
@@ -141,7 +141,7 @@ extension BaseTextField {
     }
 }
 
-extension BaseTextField: FormValidator { // Note: The FormValidator here can actually be removed (I think)
+extension BaseTextField {
     private func startValidation() {
         let validatable = FormValidatableFatory.validatableForType(type: viewModel.type)
 
