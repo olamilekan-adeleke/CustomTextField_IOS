@@ -23,3 +23,9 @@ extension FormValidator {
         return validator.validate(publisher: publisher)
     }
 }
+
+extension Publisher where Self.Output == String, Self.Failure == Never {
+    func validateText(validator: BaseFormValidatable) -> AnyPublisher<FormValidationState, Never> {
+        return validator.validate(publisher: self.eraseToAnyPublisher())
+    }
+}

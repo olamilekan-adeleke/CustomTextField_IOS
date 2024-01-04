@@ -5,6 +5,7 @@
 //  Created by Enigma Kod on 26/12/2023.
 //
 
+import Combine
 import SwiftUI
 import UIKit
 
@@ -50,6 +51,9 @@ final class BaseTextField: UIView {
 
     private let viewModel: ViewModel
 
+    private var subscriptions = Set<AnyCancellable>()
+    @Published var validationState: FormValidationState = .idel
+
     // MARK: - Lifecycle
 
     init(viewModel: ViewModel) {
@@ -58,6 +62,8 @@ final class BaseTextField: UIView {
 
         setUp()
         layout()
+
+        listenForStateChanges()
     }
 
     @available(*, unavailable)
@@ -65,17 +71,20 @@ final class BaseTextField: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
+    override func didMoveToWindow() {
+        startValidation()
+    }
+
     private func setUp() {
-        textField.isSecureTextEntry = false
-        textField.autocapitalizationType = .words
-        textField.placeholder = "Enter name here"
-        textField.keyboardType = .default
+        textField.isSecureTextEntry = viewModel.isSecure
+        textField.autocapitalizationType = viewModel.autoCap
+        textField.placeholder = viewModel.placeHolder
+        textField.keyboardType = viewModel.keyboard
 
         errorLabel.numberOfLines = 0
         errorLabel.textAlignment = .left
         errorLabel.textColor = .systemRed
         errorLabel.isHidden = true
-        errorLabel.text = "Thsuosuosous ssysy gysysnbsusususususus"
         errorLabel.font = .preferredFont(forTextStyle: .footnote)
     }
 
@@ -106,4 +115,40 @@ final class BaseTextField: UIView {
 //    override var intrinsicContentSize: CGSize {
 //        return CGSize(width: 370, height: 50)
 //    }
+}
+
+// MARK: - State Change
+
+extension BaseTextField {
+    private func validationStateChanged(state: FormValidationState) {
+        switch state {
+            case .idel: break
+            case .invaild(let errorState):
+                errorLabel.text = errorState.description
+                errorLabel.isHidden = false
+            case .valid:
+                errorLabel.text = ""
+                errorLabel.isHidden = true
+        }
+    }
+
+    private func listenForStateChanges() {
+        $validationState.receive(on: DispatchQueue.main)
+            .sink { [weak self] state in
+                self?.validationStateChanged(state: state)
+            }
+            .store(in: &subscriptions)
+    }
+}
+
+extension BaseTextField: FormValidator { // Note: The FormValidator here can actually be removed (I think)
+    private func startValidation() {
+        let validatable = FormValidatableFatory.validatableForType(type: viewModel.type)
+
+        textField.textFieldTextPublisher()
+            .removeDuplicates()
+//            .debounce(for: 0.2, scheduler: RunLoop.main)
+            .validateText(validator: validatable)
+            .assign(to: &$validationState)
+    }
 }

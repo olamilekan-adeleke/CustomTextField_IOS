@@ -13,12 +13,12 @@ enum FormValidationState {
     case valid
 
     enum ErrorState {
-        case empty
+        case empty(String)
         case custom(String)
 
         var description: String {
             switch self {
-            case .empty: return "Feild is empty"
+            case .empty(let title): return "\(title) is empty"
             case .custom(let msg): return msg
             }
         }

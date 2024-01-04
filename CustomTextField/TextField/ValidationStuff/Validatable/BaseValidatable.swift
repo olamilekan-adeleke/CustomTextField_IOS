@@ -33,3 +33,18 @@ extension BaseFormValidatable {
         publisher.map { $0.contains(where: { $0.isLetter }) }.eraseToAnyPublisher()
     }
 }
+
+// MARK: - Factory
+
+enum FormValidatableFatory {
+    static func validatableForType(type: BaseTextField.TextFieldType) -> BaseFormValidatable {
+        switch type {
+            case .name:
+                return NameValidatable()
+            case .email:
+                return EmailValidatable()
+            case .password:
+                return PasswordValidatable()
+        }
+    }
+}
