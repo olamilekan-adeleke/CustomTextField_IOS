@@ -23,14 +23,12 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
 
         view.backgroundColor = .white
         setup()
     }
 
     private func setup() {
-//        view.translatesAutoresizingMaskIntoConstraints = false
 
         vStack.addArrangedSubview(nameTextField)
         vStack.addArrangedSubview(emailTextField)

@@ -23,7 +23,7 @@ final class BaseTextField: UIView {
     lazy var textField: UITextField = {
         let textField = UITextField(frame: .zero)
         textField.textColor = UIColor.label
-//        textField.delegate = self
+        textField.delegate = self
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
@@ -53,6 +53,9 @@ final class BaseTextField: UIView {
 
     private var subscriptions = Set<AnyCancellable>()
     @Published var validationState: FormValidationState = .idel
+    private var focusState: FocusState = .inactive {
+        didSet { updateBorder() }
+    }
 
     // MARK: - Lifecycle
 
@@ -116,6 +119,15 @@ final class BaseTextField: UIView {
 // MARK: - State Change
 
 extension BaseTextField {
+    enum FocusState { case active, inactive
+
+        var borderColor: CGColor? {
+            return self == .active ? UIColor.black.withAlphaComponent(0.6).cgColor : .none
+        }
+
+        var borderWidth: CGFloat { return self == .active ? 1 : 0 }
+    }
+
     private func validationStateChanged(state: FormValidationState) {
         switch state {
             case .idel: break
@@ -135,6 +147,11 @@ extension BaseTextField {
             }
             .store(in: &subscriptions)
     }
+
+    private func updateBorder() {
+        textFieldBackgroundView.layer.borderColor = focusState.borderColor
+        textFieldBackgroundView.layer.borderWidth = focusState.borderWidth
+    }
 }
 
 extension BaseTextField {
@@ -146,5 +163,17 @@ extension BaseTextField {
             .debounce(for: 0.2, scheduler: RunLoop.main)
             .validateText(validator: validatable)
             .assign(to: &$validationState)
+    }
+}
+
+// MARK: - UITextFieldDelegate
+
+extension BaseTextField: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        focusState = .active
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        focusState = .inactive
     }
 }
