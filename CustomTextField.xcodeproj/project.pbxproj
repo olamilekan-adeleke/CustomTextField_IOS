@@ -12,7 +12,7 @@
 		39067DA12B474F16003343A2 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39067DA02B474F16003343A2 /* String+Extension.swift */; };
 		39067DA42B4751F2003343A2 /* EmailValidatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39067DA32B4751F2003343A2 /* EmailValidatable.swift */; };
 		39067DA62B475C47003343A2 /* BaseTextField+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39067DA52B475C47003343A2 /* BaseTextField+Enum.swift */; };
-		39067DAA2B476646003343A2 /* FormValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39067DA92B476646003343A2 /* FormValidator.swift */; };
+		39067DAC2B4776AE003343A2 /* Publisher+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39067DAB2B4776AE003343A2 /* Publisher+Extenstion.swift */; };
 		39FCF8222B3AE22200097FCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FCF8212B3AE22200097FCE /* AppDelegate.swift */; };
 		39FCF8242B3AE22200097FCE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FCF8232B3AE22200097FCE /* SceneDelegate.swift */; };
 		39FCF8262B3AE22200097FCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FCF8252B3AE22200097FCE /* ViewController.swift */; };
@@ -28,7 +28,7 @@
 		39067DA02B474F16003343A2 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		39067DA32B4751F2003343A2 /* EmailValidatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidatable.swift; sourceTree = "<group>"; };
 		39067DA52B475C47003343A2 /* BaseTextField+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseTextField+Enum.swift"; sourceTree = "<group>"; };
-		39067DA92B476646003343A2 /* FormValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormValidator.swift; sourceTree = "<group>"; };
+		39067DAB2B4776AE003343A2 /* Publisher+Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+Extenstion.swift"; sourceTree = "<group>"; };
 		39FCF81E2B3AE22200097FCE /* CustomTextField.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomTextField.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39FCF8212B3AE22200097FCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39FCF8232B3AE22200097FCE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				39067DA02B474F16003343A2 /* String+Extension.swift */,
+				39067DAB2B4776AE003343A2 /* Publisher+Extenstion.swift */,
 			);
 			path = extenstion;
 			sourceTree = "<group>";
@@ -74,14 +75,6 @@
 				39067DA32B4751F2003343A2 /* EmailValidatable.swift */,
 			);
 			path = Validatable;
-			sourceTree = "<group>";
-		};
-		39067DA82B476630003343A2 /* FormValidator */ = {
-			isa = PBXGroup;
-			children = (
-				39067DA92B476646003343A2 /* FormValidator.swift */,
-			);
-			path = FormValidator;
 			sourceTree = "<group>";
 		};
 		39FCF8152B3AE22200097FCE = {
@@ -129,7 +122,6 @@
 		39FCF8362B3AE3CA00097FCE /* ValidationStuff */ = {
 			isa = PBXGroup;
 			children = (
-				39067DA82B476630003343A2 /* FormValidator */,
 				39067DA72B476570003343A2 /* Validatable */,
 				39067DA22B4751D1003343A2 /* State */,
 			);
@@ -212,11 +204,11 @@
 				39067D9E2B474551003343A2 /* BaseValidatable.swift in Sources */,
 				39FCF8262B3AE22200097FCE /* ViewController.swift in Sources */,
 				39FCF83B2B3AE45000097FCE /* BaseTextField+ViewModel.swift in Sources */,
-				39067DAA2B476646003343A2 /* FormValidator.swift in Sources */,
 				39FCF8222B3AE22200097FCE /* AppDelegate.swift in Sources */,
 				39FCF8392B3AE42E00097FCE /* BaseTextField.swift in Sources */,
 				39FCF8242B3AE22200097FCE /* SceneDelegate.swift in Sources */,
 				39067DA62B475C47003343A2 /* BaseTextField+Enum.swift in Sources */,
+				39067DAC2B4776AE003343A2 /* Publisher+Extenstion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
