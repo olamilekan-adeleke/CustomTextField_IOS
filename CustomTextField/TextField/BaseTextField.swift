@@ -111,10 +111,6 @@ final class BaseTextField: UIView {
             errorLabel.widthAnchor.constraint(equalTo: widthAnchor),
         ])
     }
-
-//    override var intrinsicContentSize: CGSize {
-//        return CGSize(width: 370, height: 50)
-//    }
 }
 
 // MARK: - State Change
@@ -147,7 +143,7 @@ extension BaseTextField {
 
         textField.textFieldTextPublisher()
             .removeDuplicates()
-//            .debounce(for: 0.2, scheduler: RunLoop.main)
+            .debounce(for: 0.2, scheduler: RunLoop.main)
             .validateText(validator: validatable)
             .assign(to: &$validationState)
     }
