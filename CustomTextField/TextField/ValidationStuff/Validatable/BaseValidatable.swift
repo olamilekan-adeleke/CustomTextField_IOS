@@ -1,5 +1,5 @@
 //
-//  BaseValidator.swift
+//  BaseValidatable.swift
 //  CustomTextField
 //
 //  Created by Enigma Kod on 04/01/2024.
@@ -8,11 +8,11 @@
 import Combine
 import Foundation
 
-protocol BaseFormValidator {
+protocol BaseFormValidatable {
     func validate(publisher: AnyPublisher<String, Never>) -> AnyPublisher<FormValidationState, Never>
 }
 
-extension BaseFormValidator {
+extension BaseFormValidatable {
     func isEmpty(publisher: AnyPublisher<String, Never>) -> AnyPublisher<Bool, Never> {
         publisher.map { $0.isEmpty }.eraseToAnyPublisher()
     }

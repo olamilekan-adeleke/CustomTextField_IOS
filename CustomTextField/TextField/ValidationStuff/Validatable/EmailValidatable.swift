@@ -1,5 +1,5 @@
 //
-//  EmailValidator.swift
+//  EmailValidatable.swift
 //  CustomTextField
 //
 //  Created by Enigma Kod on 04/01/2024.
@@ -8,7 +8,7 @@
 import Combine
 import Foundation
 
-struct EmailValidator: BaseFormValidator {
+struct EmailValidatable: BaseFormValidatable {
     func validate(publisher: AnyPublisher<String, Never>) -> AnyPublisher<FormValidationState, Never> {
         Publishers.CombineLatest(
             isEmpty(publisher: publisher),

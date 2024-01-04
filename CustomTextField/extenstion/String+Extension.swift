@@ -5,7 +5,8 @@
 //  Created by Enigma Kod on 04/01/2024.
 //
 
-import Foundation
+import Combine
+import UIKit
 
 extension String {
     func hasNumber() -> Bool {
@@ -26,5 +27,14 @@ extension String {
             return false
         }
         return true
+    }
+}
+
+extension UITextField {
+    func textFieldTextPublisher() -> AnyPublisher<String, Never> {
+        NotificationCenter.default
+            .publisher(for: UITextField.textDidChangeNotification, object: self)
+            .compactMap { ($0.object as? UITextField)?.text }
+            .eraseToAnyPublisher()
     }
 }
