@@ -13,8 +13,8 @@ protocol BaseFormValidatable {
 }
 
 extension BaseFormValidatable {
-    func isEmpty(publisher: AnyPublisher<String, Never>) -> AnyPublisher<Bool, Never> {
-        publisher.map { $0.isEmpty }.eraseToAnyPublisher()
+    func isEmpty(publisher: AnyPublisher<String, Never>) -> some Publisher<Bool, Never> {
+        publisher.map { $0.isEmpty }
     }
 
     func isTooShort(publisher: AnyPublisher<String, Never>, minLen: Int) -> AnyPublisher<Bool, Never> {
